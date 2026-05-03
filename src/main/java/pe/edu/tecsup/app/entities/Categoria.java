@@ -3,7 +3,6 @@ package pe.edu.tecsup.app.entities;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @AllArgsConstructor
@@ -26,6 +25,6 @@ public class Categoria {
     private Integer orden;
 
     @OneToMany(mappedBy  = "categoria")
-    private List<Producto> productos = new ArrayList<>();
+    private List<Producto> productos;
 
 }
