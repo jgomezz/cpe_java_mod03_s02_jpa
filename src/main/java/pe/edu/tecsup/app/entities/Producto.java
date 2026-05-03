@@ -1,10 +1,7 @@
 package pe.edu.tecsup.app.entities;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
@@ -13,6 +10,7 @@ import java.util.Date;
 @NoArgsConstructor
 @Builder
 @Data
+@ToString(exclude = "categoria")
 @Entity
 @Table(name="productos")
 public class Producto {

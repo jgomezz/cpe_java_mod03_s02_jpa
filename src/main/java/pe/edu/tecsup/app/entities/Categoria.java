@@ -10,9 +10,9 @@ import java.util.List;
 @NoArgsConstructor
 @Builder
 @Data
+@ToString(exclude = "productos")
 @Entity
 @Table(name="categorias")
-@ToString(exclude = "productos")
 public class Categoria {
 
     @Id
