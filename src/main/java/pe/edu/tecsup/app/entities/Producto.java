@@ -21,8 +21,10 @@ public class Producto {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private Long categorias_id;
-    //private Categoria categoria;
+    //private Long categorias_id;
+    @ManyToOne
+    @JoinColumn(name="categorias_id")
+    private Categoria categoria;
 
     // findBy
 

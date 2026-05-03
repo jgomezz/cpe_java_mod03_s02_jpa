@@ -1,10 +1,10 @@
 package pe.edu.tecsup.app.entities;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -12,6 +12,7 @@ import lombok.NoArgsConstructor;
 @Data
 @Entity
 @Table(name="categorias")
+@ToString(exclude = "productos")
 public class Categoria {
 
     @Id
@@ -24,6 +25,7 @@ public class Categoria {
     @Column(name = "orden")
     private Integer orden;
 
-
+    @OneToMany(mappedBy  = "categoria")
+    private List<Producto> productos = new ArrayList<>();
 
 }

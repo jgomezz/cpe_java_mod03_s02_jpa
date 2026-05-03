@@ -4,6 +4,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import pe.edu.tecsup.app.entities.Categoria;
 import pe.edu.tecsup.app.entities.Producto;
 
 import java.util.List;
@@ -67,7 +68,11 @@ class ProductoServiceTest {
 
         // 2. Crear un producto y grabarlo
         var producto = Producto.builder()
-                .categorias_id(1L) // Categoria de procesadores
+                .categoria(
+                        Categoria.builder()
+                                .id(1L)
+                                .build()
+                ) // Categoria de procesadores
                 .nombre("GTX-5070")
                 .descripcion("GPU para gaming de alta gama")
                 .precio(1500.00)
